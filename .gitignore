@@ -1,0 +1,11 @@
+# Temp Files #
+##############
+*.swp
+*.DS_Store
+npm-debug.log
+
+.sass-cache/
+node_modules/
+bower_components/
+build/
+build_test/

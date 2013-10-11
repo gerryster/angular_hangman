@@ -1,0 +1,22 @@
+{
+  "name": "angular_hangman",
+  "version": "0.0.0",
+  "author": [
+    "Ryan Gerry <ryan.gerry@centro.net>",
+    "Clara Gerry"
+  ],
+  "engines": {
+    "node": ">=0.10.18"
+  },
+  "dependencies": {
+    "coffee-script": "1.6.3",
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-sass": "~0.4.1",
+    "grunt-contrib-watch": "git://github.com/gruntjs/grunt-contrib-watch.git#master",
+    "grunt-slim": "~0.1.0",
+    "tiny-lr": "~0.0.5"
+  }
+}
