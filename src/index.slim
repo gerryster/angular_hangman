@@ -1,0 +1,34 @@
+doctype 5
+html ng-app="hangman"
+  head
+    link href="/assets/angular/hangman.css" rel="stylesheet"
+     link href="/assets/angular/word-display.css" rel="stylesheet"
+     link href="/assets/angular/man.css" rel="stylesheet"
+     link href="/assets/angular/alphabet-selector.css" rel="stylesheet"
+     link href="/assets/angular/game-over.css" rel="stylesheet"
+      css:
+        | html, body {
+          | margin: 0;
+          | padding: 0;
+        | }
+  body ng-controller="HangmanCtrl" ng-keyup="keyupLetter($event)"
+    section#game-over ng-if="gameState.gameOver"
+      .dialog-won ng-if="gameState.won"
+        | You found the word
+          em { gameState.answer}
+        |  Nice Job!
+        button ng-click="gameState.newGame()"
+      .dialog-lost ng-if="!gameState.won"
+        | Sorry, the man is dead.
+        button ng-click="gameState.newGame()"
+    section#top-container
+      section#word-display
+        | {{formattedGuess}}
+      section#man-section
+        #man ng-style="advanceDeath()"
+    section#alphabet-selector
+      label for="letter-{{letter}}", ng-repeat-start="letter in alphabet" {{letter}}
+      input ng-repeat-end type="radio" id="letter-{{letter}}" name="letter" ng-click="selectLetter(letter)" value= "{{letter}}"
+    script src="/assets/underscore.js?body=1" type="text/javascript"
+    script src="/assets/angular.js"
+    script src="/assets/angular/hangman-app.js"
