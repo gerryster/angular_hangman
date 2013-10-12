@@ -27,8 +27,14 @@ html ng-app="hangman"
       section#man-section
         #man ng-style="advanceDeath()"
     section#alphabet-selector
-      label for="letter-{{letter}}", ng-repeat-start="letter in alphabet" {{letter}}
-      input ng-repeat-end type="radio" id="letter-{{letter}}" name="letter" ng-click="selectLetter(letter)" value= "{{letter}}"
-    script src="/assets/underscore.js?body=1" type="text/javascript"
-    script src="/assets/angular.js"
-    script src="/assets/angular/hangman-app.js"
+      label for="letter-{{letter}}" ng-repeat-start="letter in alphabet" {{letter}}
+      input(ng-repeat-end type="radio" id="letter-{{letter}}" name="letter" ng-click="selectLetter(letter)" value= "{{letter}}")
+
+    / librarires
+    script src="../bower_components/underscore/underscore-min.js"
+    script src="../bower_components/angular/angular.js"
+
+    / app
+    script src="scripts/hangman-app.js"
+    script src="scripts/controllers/hangmanCtrl.js"
+    script src="scripts/models/gameState.js"
